@@ -75,6 +75,11 @@ public class Options {
     public int manufacturerId = 65520; // 0xfff0
 
     /**
+     * 是否允许后台检测
+     */
+    public boolean isAllowBackendScan = false;
+
+    /**
      * TODO 待优化(泛型)
      */
     private BleWrapperCallback bleWrapperCallback;
@@ -168,6 +173,11 @@ public class Options {
 
     public Options setIgnoreRepeat(boolean ignoreRepeat) {
         isIgnoreRepeat = ignoreRepeat;
+        return this;
+    }
+
+    public Options setAllowBackendScan(boolean allowBackendScan) {
+        isAllowBackendScan = allowBackendScan;
         return this;
     }
 

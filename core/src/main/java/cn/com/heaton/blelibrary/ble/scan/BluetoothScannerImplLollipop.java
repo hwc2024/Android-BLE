@@ -89,8 +89,8 @@ class BluetoothScannerImplLollipop extends BleScannerCompat {
         if (filter != null){
             filters.add(filter);
         }
-        if (background){
             UUID uuidService = Ble.options().getUuidService();
+        if (background && !Ble.options().isAllowBackendScan){
             if (filter == null){
                 filters.add(new ScanFilter.Builder()
                         .setServiceUuid(ParcelUuid.fromString(uuidService.toString()))//8.0以上手机后台扫描，必须开启
